@@ -1,5 +1,9 @@
 # [level 2] 멀리 뛰기 - 12914 
 
+### 문제 풀이 과정
+팩토리얼 메서드를 만들고 콤비네이션으로 풀려고 했으나 런타임 에러를 잡지 못해서
+DP Top-Down으로 풀이 진행
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12914) 
 
 ### 성능 요약
