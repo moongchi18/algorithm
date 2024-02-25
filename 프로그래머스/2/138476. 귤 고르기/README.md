@@ -1,5 +1,12 @@
 # [level 2] 귤 고르기 - 138476 
 
+### 문제풀이 과정
+- 귤 사이즈 배열의 max size +1개 사이즈의 배열 생성
+- count배열의 1 ~ max+1 위치 값에 해당하는 귤사이즈++
+- count배열 정렬
+- count 배열의 max 위치부터 sum 합산, count++
+- sum이 k를 초과하면 리턴
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/138476) 
 
 ### 성능 요약
