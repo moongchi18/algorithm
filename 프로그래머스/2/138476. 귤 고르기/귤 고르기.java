@@ -3,24 +3,23 @@ import java.util.*;
 class Solution {
     public int solution(int k, int[] tangerine) {
         int answer = 0;
-        
-        int max = Arrays.stream(tangerine).max().orElse(0);
-        int[] list = new int[max+1];
-        
-        for (int i = 0; i < tangerine.length; i++) {
-        	int val = tangerine[i];
-			list[val]++;
-		}
-        
-        Arrays.sort(list);
-        
-        int sum = 0;
-        for (int i = max; i >= 0; i--) {
-			sum += list[i];
-			answer++;
-			if(sum >= k) break; 
-		}
-        
+        HashMap<Integer,Integer> map =new HashMap<>();
+
+        for (int t : tangerine) {
+            map.put(t, map.getOrDefault(t, 0) + 1);
+        }
+
+        List<Integer> list = new ArrayList<>(map.keySet());
+        list.sort((o1, o2) -> map.get(o2)-map.get(o1));
+
+        for(Integer key:list){
+            k -=map.get(key);
+            answer++;
+            if(k<=0){
+                break;
+            }
+        }
+
         return answer;
     }
 }
