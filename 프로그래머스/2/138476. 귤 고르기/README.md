@@ -3,8 +3,10 @@
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/138476) 
 
 ### 성능 요약
-
-메모리: 104 MB, 시간: 82.53 ms
+- Array
+         - 메모리: 104 MB, 시간: 37.98 ms
+- HashMap
+        - 메모리: 104 MB, 시간: 82.53 ms
 
 ### 구분
 
