@@ -1,5 +1,10 @@
 # [level 2] 연속 부분 수열 합의 개수 - 131701 
 
+### 문제풀이 과정
+- 원순열 문제는 처음 접하여 JavaScript의 풀이 방식 참고
+- 참고했던 코드에 없던 times 변수를 추가하여 이중 for문 횟수제한
+- 구현 및 통과 후 더 간결한 코드로 재구현
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131701) 
 
 ### 성능 요약
