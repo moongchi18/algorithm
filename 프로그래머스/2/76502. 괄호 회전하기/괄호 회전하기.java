@@ -12,13 +12,11 @@ class Solution {
 		int success = 0;
 		while (count != length && rotation <= length) {
 			char now = charArray[count];
-			if (stack.isEmpty()) {
+			if(stack.isEmpty()) {
 				stack.add(now);
-			} else if (stack.peek() == '(' && now == ')') {
-				stack.pop();
-			} else if (stack.peek() == '{' && now == '}') {
-				stack.pop();
-			} else if (stack.peek() == '[' && now == ']') {
+			} else if (stack.peek() == '(' && now == ')'
+					|| stack.peek() == '{' && now == '}'
+					|| stack.peek() == '[' && now == ']') {
 				stack.pop();
 			} else {
 				stack.add(now);
@@ -26,7 +24,7 @@ class Solution {
 			count++;
 
 			if (count == length) {
-				if (stack.size() == 0) {
+				if (stack.isEmpty()) {
 					success++;
 				}
 				count = 0;
