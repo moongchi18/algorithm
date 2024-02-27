@@ -6,27 +6,27 @@ class Solution {
         int size = 10;
         List<String> search = Arrays.asList(want);
         
-        int[] values = new int[number.length];
+        int[] compare = new int[number.length];
         for (int j = 0; j < size; j++) {
 			if(search.contains(discount[j])) {
 				int index = search.indexOf(discount[j]);
-				values[index]++;
+				compare[index]++;
 			}
 		}
-        if(Arrays.equals(number, values)) {
+        if(Arrays.equals(number, compare)) {
         	answer++;
         }
         
         for (int i = 0; i < discount.length - size; i++) {
 			if(search.contains(discount[i])) {
 				int left = search.indexOf(discount[i]);
-				values[left]--;
+				compare[left]--;
 			}
 			if(search.contains(discount[size+i])) {
 				int right = search.indexOf(discount[size + i]);
-				values[right]++;
+				compare[right]++;
 			}
-        	if(Arrays.equals(number, values)) {
+        	if(Arrays.equals(number, compare)) {
 				answer++;
 			}
 		}
