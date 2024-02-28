@@ -1,26 +1,19 @@
 import java.util.*;
 
 class Solution {
-   public int solution(int[] citations) {
-       int answer = 0;
-       int length = citations.length;
-       citations = mergeSort(citations, 0, length - 1);
-       
-       int index = citations.length - 1;
-       while(answer != length) {
-       	if(citations[index] >= length) {
-       		answer++;
-       		index--;
-       		continue;
-       	} else {
-       		answer = 0;
-       		length--;
-       		index = citations.length - 1;
-       	}
-       }
-       
-       return answer;
-   }
+    public int solution(int[] citations) {
+        int answer = 0;
+        int length = citations.length;
+        citations = mergeSort(citations, 0, length - 1);
+        for (int i = length -1 ; i >= 0 ; i--) {
+        	if(length -i >= citations[i]) {
+            	break;
+            }
+            answer++;
+        }
+        
+        return answer;
+    }
 
 	private int[] mergeSort(int[] citations, int i, int j) {
 		if(i < j) {
