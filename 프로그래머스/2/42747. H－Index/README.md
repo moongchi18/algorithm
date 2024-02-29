@@ -1,5 +1,10 @@
 # [level 2] H-Index - 42747 
 
+### 문제풀이 과정
+- H-Index는 n개 이상 n이상인 값중 최대값이므로 길이와도 관련이 있다고 판단
+- 정렬 후 길이 값과 list의 값을 비교하고 H-Index가 아닌 경우 길이 값--
+- 
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42747) 
 
 ### 성능 요약
