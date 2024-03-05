@@ -1,5 +1,13 @@
 # [level 2] [1차] 캐시 - 17680 
 
+### 문제풀이 과정
+- cache로 활용할 DeQue 생성
+- cache에 도시명이 있는 경우 answer++, cache에서 도시명 제거
+- cache에 도시명이 없는 경우 answer+5
+- 도시명을 cache에 첫번째 순서로 삽입
+- cache 사이즈가 정해진 값을 초과하는 경우 마지막 cache의 도시명 삭제
+- 반복
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/17680) 
 
 ### 성능 요약
