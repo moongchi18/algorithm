@@ -3,8 +3,10 @@ import java.util.List;
 
 class Solution {
     public int[] solution(int[] progresses, int[] speeds) {
-        int[] workDay = new int[progresses.length];
-        for (int i = 0; i < workDay.length; i++) {
+    	int length = progresses.length;
+        int[] workDay = new int[length];
+        
+        for (int i = 0; i < length; i++) {
         	if((100 - progresses[i]) % speeds[i] == 0) {
         		workDay[i] = (100 - progresses[i]) / speeds[i];
         	} else {
@@ -14,9 +16,9 @@ class Solution {
         
         int index = 0;
         List<Integer> list = new ArrayList<>();
-        while(index < progresses.length) {
+        while(index < length) {
         	int count = 1;
-        	for (int i = index + 1; i < workDay.length; i++) {
+        	for (int i = index + 1; i < length; i++) {
 				if(workDay[index] >= workDay[i]) {
 					count++;
 				}else {
