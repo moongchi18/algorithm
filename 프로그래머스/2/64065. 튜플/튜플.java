@@ -1,13 +1,8 @@
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class Solution {
     public int[] solution(String s) {
-        int[] answer = {};
         Queue<Integer> que = new LinkedList<>();
         
 		String element = s.replaceAll("\\{\\{", "")
@@ -31,14 +26,10 @@ class Solution {
 					temp.remove(index);
 				}
 			}
-			
 			for (int t : temp) {
 				que.add(t);
 			}
 		}
-		
-		
-		
         return que.stream().mapToInt(Integer::intValue).toArray();
     }
 }
