@@ -5,31 +5,29 @@ class Solution {
     public int[] solution(String s) {
         Queue<Integer> que = new LinkedList<>();
         
-		String element = s.replaceAll("\\{\\{", "")
+		String temp = s.replaceAll("\\{\\{", "")
 						.replaceAll("\\}\\}", "");
-		String[] elements = element.split("\\},\\{");
-		int[][] array = Arrays.stream(elements)
-							.map(str -> str.split(","))
-							.map(temp -> Arrays.stream(temp)
-													.mapToInt(Integer::parseInt)
-													.toArray())
-							.sorted(Comparator.comparingInt(intArr -> intArr.length))
-							.toArray(int[][]::new);
+		String[] stringTypeIntArray = temp.split("\\},\\{");
+        List<List<Integer>> listList = Arrays.stream(stringTypeIntArray)
+						                .map(str -> Arrays.stream(str.split(","))
+						                        .map(Integer::parseInt)
+						                        .collect(Collectors.toList()))
+						                .sorted(Comparator.comparingInt(List::size))
+						                .collect(Collectors.toList());
 
-		for (int[] is : array) {
-			List<Integer> temp = Arrays.stream(is)
-										.boxed()
-										.collect(Collectors.toList());
+		for (List<Integer> list : listList) {
 			for (int q : que) {
-				int index = temp.indexOf(q);
+				int index = list.indexOf(q);
 				if(index != -1) {
-					temp.remove(index);
+					list.remove(index);
 				}
 			}
-			for (int t : temp) {
-				que.add(t);
+			for (int l : list) {
+				que.add(l);
 			}
 		}
-        return que.stream().mapToInt(Integer::intValue).toArray();
+        return que.stream()
+        			.mapToInt(Integer::intValue)
+        			.toArray();
     }
 }
