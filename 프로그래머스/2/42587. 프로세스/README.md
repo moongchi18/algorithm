@@ -1,5 +1,9 @@
 # [level 2] 프로세스 - 42587 
 
+### 문제풀이 과정
+- priorityQue를 이용하여 해결하려고 했으나 실패
+- 다른 풀이를 참고했을 때 Queue를 두개 활용하여 이용하는 풀이를 봤으나 Queue 하나에 배열로 [priorities, index]을 사용하면 해결 가능할 것으로 보여서 풀이 진행
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42587) 
 
 ### 성능 요약
