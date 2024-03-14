@@ -1,5 +1,10 @@
 # [level 2] 전화번호 목록 - 42577 
 
+### 문제풀이 과정
+- 이중 for문(0 < i < n, 0 < j < n)으로 배열의 앞뒤 요소 startWith 메서드로 비교 -> 테스트케이스 3,4 시간초과 발생
+- 이중 for문(0 < i < n-1, i+1 < j < n)으로 효율성 개선 -> 테스트케이스 3,4 시간초과 발생
+- phone_book을 정렬 후 for문(0 < i < n-1)으로 i 인덱스와 i+1 인덱스의 데이터 startWith 메서드로 비교
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42577) 
 
 ### 성능 요약
