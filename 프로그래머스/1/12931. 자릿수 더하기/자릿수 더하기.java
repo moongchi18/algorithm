@@ -1,10 +1,12 @@
-import java.util.*;
-
 public class Solution {
     public int solution(int n) {
-        return String.valueOf(n).chars()
-    			.map(Character::getNumericValue)
-    			.peek(System.out::println)
-    			.sum();
+        
+    	int sum = 0;
+    	while(n > 0) {
+    		sum += n % 10;
+    		n /= 10;
+    	}
+    	
+        return sum;
     }
 }
