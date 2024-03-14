@@ -1,5 +1,11 @@
 # [level 1] 자릿수 더하기 - 12931 
 
+### 문제풀이 과정
+1. int To String 형변환, String To char[] 형변환, char To int 형변환 후 stream sum 연산
+2. (n % 10) 나머지를 더하고 n /= 10을 반복하며 계산
+
+- 1 / 2 비교 결과 연산 속도가 100배 정도 차이나는 것 확인
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12931) 
 
 ### 성능 요약
