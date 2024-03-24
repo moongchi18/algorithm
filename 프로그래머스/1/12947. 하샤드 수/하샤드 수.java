@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public boolean solution(int x) {
         int temp = x;
@@ -6,10 +8,7 @@ class Solution {
         	sum += temp % 10;
         	temp /= 10;
         }
-        if(x % sum == 0) {
-        	return true;
-        }
         
-        return false;
+        return x % sum == 0;
     }
 }
