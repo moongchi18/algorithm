@@ -1,5 +1,10 @@
 # [level 5] 상품을 구매한 회원 비율 구하기 - 131534 
 
+### 문제풀이 과정
+- 2021년에 가입한 전체 회원들 중 상품을 구매한 회원수 : ONLINE_SALE(os) 테이블에 USER_INFO(ui) 테이블을 left 조인하고 ui 테이블의 가입일이 2021년인 데이터 조회
+- 이때 count(os.user_id)를 회원수로 생각했으나 실제로는 중복제거를 해야 회원수이고, 중복제거를 하지 않아 상품개수가 조회되어 15분 정도 헤멤
+- 회원수 : distinct(os.user_id)
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131534) 
 
 ### 성능 요약
