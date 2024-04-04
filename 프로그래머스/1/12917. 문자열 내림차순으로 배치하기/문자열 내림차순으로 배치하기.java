@@ -1,12 +1,11 @@
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 class Solution {
     public String solution(String s) {
-    	return Stream.of(s.split(""))
-    				.sorted(Comparator.reverseOrder())
-    				.collect(Collectors.joining());
-        		
+    	char[] temp = s.toCharArray();
+    	Arrays.sort(temp);
+    	StringBuilder sb = new StringBuilder(String.valueOf(temp));
+    	return sb.reverse()
+        		.toString();
     }
 }
