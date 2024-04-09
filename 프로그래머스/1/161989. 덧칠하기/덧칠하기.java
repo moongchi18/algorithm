@@ -1,17 +1,13 @@
-import java.util.*;
-import java.util.stream.Collectors;
-
 class Solution {
     public int solution(int n, int m, int[] section) {
-        List<Integer> list = Arrays.stream(section)
-        							.boxed()
-        							.collect(Collectors.toList());
-        int count = 0;
-        while(!list.isEmpty()) {
-        	count++;
-        	int index = list.get(list.size() - 1);
-        	list.removeIf(i -> i > (index - m));
-        }
+        int current = section[0] + m;
+        int count = 1;
+        for (int i = 1; i < section.length; i++) {
+			if(current <= section[i]) {
+				count++;
+				current = section[i] + m;
+			}
+		}
     	return count;
     }
 }
