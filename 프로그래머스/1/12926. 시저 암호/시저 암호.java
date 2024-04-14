@@ -4,11 +4,11 @@ class Solution {
         for (int i = 0; i < arr.length; i++) {
         	char temp = arr[i];
         	if(Character.isUpperCase(temp)) {
-        		int num = (temp - 65 + n) % 26;
-        		arr[i] = (char) (num + 65);
+        		int alpIndex = (temp - 'A' + n) % 26;
+        		arr[i] = (char) (alpIndex + 'A');
         	} else if(Character.isLowerCase(temp)) {
-        		int num = (temp - 97 + n) % 26;
-        		arr[i] = (char) (num +97);
+        		int alpIndex = (temp - 'a' + n) % 26;
+        		arr[i] = (char) (alpIndex + 'a');
         	}
 		}
         
