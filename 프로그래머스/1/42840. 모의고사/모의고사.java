@@ -7,18 +7,14 @@ class Solution {
         int[] B = new int[] {2, 1, 2, 3, 2, 4, 2, 5};
         int[] C = new int[] {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
         
-        int aSize = A.length;
-        int bSize = B.length;
-        int cSize = C.length;
-
         int a = 0;
         int b = 0;
         int c = 0;
         
         for (int i = 0; i < answers.length; i++) {
-			if(answers[i] == A[i % aSize]) a++;
-			if(answers[i] == B[i % bSize]) b++;
-			if(answers[i] == C[i % cSize]) c++;
+			if(answers[i] == A[i % A.length]) a++;
+			if(answers[i] == B[i % B.length]) b++;
+			if(answers[i] == C[i % C.length]) c++;
 		}
         answer.add(a);
         answer.add(b);
