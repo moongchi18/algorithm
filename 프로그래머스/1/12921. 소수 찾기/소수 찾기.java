@@ -9,12 +9,7 @@ class Solution {
         	}
 			for (int j = 1; j <= sqrt; j++) {
 				if(i % j == 0) {
-					if(i / j == j) {
-						count++;
-						break;
-					} else {
-						count++;
-					}
+					count++;
 					if(count > 1) {
 						break;
 					}
