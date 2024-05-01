@@ -1,46 +1,29 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
 class Solution {
     public int[] solution(String[] operations) {
-    	Queue<Integer> que = new LinkedList<>();
+    	PriorityQueue<Integer> que = new PriorityQueue<>();
+    	PriorityQueue<Integer> reverseQue = new PriorityQueue<>(Comparator.reverseOrder());
     	
-    	for (String s : operations) {
-    		String[] arr = s.split(" ");
-    		String op = arr[0];
-    		int num = Integer.parseInt(arr[1]);
-    		
-    		if(op.startsWith("I")) {
-    			que.add(num);
-    		} else {
-    			if(que.isEmpty()) {
-    				continue;
-    			} else {
-    				if(num > 0) {
-    					int max = que.stream()
-    							.mapToInt(Integer::intValue)
-    							.max()
-    							.orElse(0);
-    					que.remove(max);
-    				}else {
-    					int min = que.stream()
-    							.mapToInt(Integer::intValue)
-    							.min()
-    							.orElse(0);
-    					que.remove(min);
-    				}
-    			}
-    		}
+    	for (String op : operations) {
+			if(op.startsWith("I")) {
+				int num = Integer.parseInt(op.substring(2));
+				que.add(num);
+				reverseQue.add(num);
+			} else {
+				if(op.equals("D 1")) {
+					que.remove(reverseQue.poll());
+				} else {
+					reverseQue.remove(que.poll());
+				}
+			}
 		}
-    	int min = que.stream()
-					.mapToInt(Integer::intValue)
-					.min()
-    				.orElse(0);
-    	int max = que.stream()
-					.mapToInt(Integer::intValue)
-					.max()
-	    			.orElse(0);
-
-        return new int[] {max, min};
+    	
+    	if(que.size() > 1) {
+    		return new int[] {reverseQue.poll(), que.poll()};
+    	} else {
+    		return new int[] {0, 0};
+    	}
     }
 }
