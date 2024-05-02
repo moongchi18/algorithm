@@ -3,10 +3,10 @@ class Solution {
         int y = triangle.length;
         for (int yi = y - 1; yi > 0; yi--) {
 			int xSize = triangle[yi].length - 1;
-			int xIndex = 0;
-			while(xIndex < xSize) {
-				triangle[yi-1][xIndex] += Math.max(triangle[yi][xIndex], triangle[yi][xIndex + 1]);
-				xIndex++;
+			int xi = 0;
+			while(xi < xSize) {
+				triangle[yi-1][xi] += Math.max(triangle[yi][xi], triangle[yi][xi + 1]);
+				xi++;
 			}
 		}
     	return triangle[0][0];
