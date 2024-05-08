@@ -9,17 +9,16 @@ class Solution {
 			list.add(new Stage(i + 1));
 		}
     	for (int i = 0; i < stages.length; i++) {
-			int blockedFloor = stages[i];
-			list.get(blockedFloor - 1).blockedPeopleCountPlus();
-			for (int j = 1; j <= blockedFloor; j++) {
-				list.get(j - 1).attemptedPeopleCountPlus();
+			int blockedFloor = stages[i] - 1;
+			list.get(blockedFloor).blockedPeopleCountPlus();
+			for (int j = 0; j < blockedFloor; j++) {
+				list.get(j).attemptedPeopleCountPlus();
 			}
 		}
     	
-    	
     	return list.stream()
-    				.sorted(Comparator.comparing(Stage::getBlockedRatio).reversed()
-    						.thenComparing(Stage::getFloor))
+    				.sorted(Comparator.comparing(Stage::getBlockedRatio).reversed())
+//    						.thenComparing(Stage::getFloor))
     				.filter(s -> s.getFloor() <= N)
     				.peek(System.out::println)
     				.mapToInt(Stage::getFloor)
